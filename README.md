@@ -3,6 +3,8 @@
 > **AI that doesn’t just agree.**  
 > Keep the goal. Test the judgment. Explain the change.
 
+**Public demo:** https://alex-radushev.github.io/CandorLoop/
+
 CandorLoop is a focused decision companion built for **OpenAI Build Week 2026**. It helps a person see the difference between what they want an AI to confirm and what the supplied evidence actually supports—without becoming cold, obstructive, or controlling.
 
 The user states the outcome that must remain true, adds the latest conversation or request, and receives a compact, structured read:

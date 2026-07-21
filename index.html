@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CandorLoop — OpenAI Build Week 2026</title>
+  <meta name="description" content="AI that doesn’t just agree. Keep the goal. Test the judgment. Explain the change." />
+  <style>
+    :root{--bg:#0b0d12;--panel:#141821;--panel2:#1b202b;--text:#f6f7fb;--muted:#aeb7c8;--line:#2b3342;--violet:#9b8cff;--mint:#58dccb;--gold:#f1cb72}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 12% 0,#1d1834 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.5 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button{font:inherit}.wrap{width:min(1100px,92vw);margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:850}.mark{width:40px;height:40px;border:3px solid var(--violet);border-radius:14px;display:grid;place-items:center;color:var(--mint);font-weight:900}.badge{font-size:12px;color:#d5d9e4;border:1px solid var(--line);border-radius:999px;padding:7px 10px}.hero{padding:58px 0 42px}.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--mint);font-weight:850}.hero h1{font-size:clamp(46px,9vw,90px);line-height:.96;letter-spacing:-.05em;margin:16px 0 22px;max-width:900px}.hero p{font-size:clamp(18px,3vw,26px);color:var(--muted);max-width:820px}.proof{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.proof span{font-size:13px;color:#dce1eb;border:1px solid var(--line);background:#11151d;padding:8px 11px;border-radius:999px}.notice{margin-top:24px;border:1px solid #51496f;background:#181528;color:#ded8ff;border-radius:14px;padding:13px 15px}.section{padding:42px 0 56px}.section h2{font-size:clamp(30px,5vw,50px);line-height:1.05;letter-spacing:-.03em;margin:7px 0 12px}.intro{color:var(--muted);max-width:760px}.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.scenario{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),#11151d);color:var(--text);padding:18px;border-radius:17px;text-align:left;cursor:pointer}.scenario.active{box-shadow:0 0 0 2px var(--violet) inset}.scenario small{color:var(--mint);font-weight:800;text-transform:uppercase;letter-spacing:.1em}.scenario h3{font-size:20px;margin:9px 0 7px}.scenario p{color:var(--muted);font-size:14px;margin:0}.workspace{display:grid;grid-template-columns:1fr 1.05fr;gap:16px;margin-top:16px}.card{border:1px solid var(--line);background:rgba(20,24,33,.96);border-radius:19px;padding:20px}.card h3{font-size:21px;margin:0 0 14px}.label{display:block;font-size:13px;font-weight:800;color:#dfe4ed;margin:13px 0 6px}.field{border:1px solid var(--line);background:#0f131a;color:#eef1f6;border-radius:12px;padding:12px 13px;min-height:84px}.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mode{border:1px solid var(--line);background:#11151d;color:#dce1eb;padding:10px;border-radius:10px;cursor:pointer;font-size:13px}.mode.active{border-color:var(--mint);background:#10201f;color:#fff}.run{width:100%;margin-top:15px;border:0;border-radius:12px;padding:13px;background:linear-gradient(90deg,var(--violet),var(--mint));color:#08100f;font-weight:900;cursor:pointer}.empty{min-height:400px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:28px}.empty strong{display:block;font-size:24px;color:#fff;margin-bottom:8px}.result{display:none}.result.show{display:block}.result-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.engine{font-size:12px;color:#e3ddff;border:1px solid #5b5373;border-radius:999px;padding:6px 9px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.metric{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px}.metric strong{display:block;font-size:24px}.metric span{font-size:12px;color:var(--muted)}.finding{border-top:1px solid var(--line);padding:13px 0}.finding h4{margin:0 0 5px}.finding p{margin:0;color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{font-size:12px;border:1px solid var(--line);background:#171c26;color:#dce2ed;padding:7px 9px;border-radius:999px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.secondary{border:1px solid var(--line);background:#11151d;color:#fff;padding:11px;border-radius:11px;cursor:pointer}.loop{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.loop article{border:1px solid var(--line);background:#11151d;border-radius:16px;padding:17px}.loop span{color:var(--mint);font-size:12px;font-weight:850}.loop h3{margin:8px 0}.loop p{color:var(--muted);margin:0}.footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer a{color:#fff}
+    @media(max-width:820px){.scenarios,.workspace,.loop{grid-template-columns:1fr}.modes{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.hero{padding-top:35px}.badge{display:none}.top{align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top"><div class="brand"><div class="mark">C</div>CandorLoop</div><div class="badge">OPENAI BUILD WEEK 2026</div></header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">KEEP THE GOAL · TEST THE JUDGMENT · EXPLAIN THE CHANGE</div>
+        <h1>AI that doesn’t just agree.</h1>
+        <p>CandorLoop separates what a user wants to hear from what the supplied evidence supports—without becoming cold, obstructive, or controlling.</p>
+        <div class="proof"><span>GPT-5.6 Responses API</span><span>Structured Outputs</span><span>Codex-built</span><span>Human judgment stays in the loop</span></div>
+        <div class="notice"><strong>Public submission demo:</strong> this page uses a clearly labeled deterministic preview. The repository contains the complete server-side GPT-5.6 integration used by the full application.</div>
+      </section>
+
+      <section class="section" id="demo">
+        <div class="eyebrow">INTERACTIVE DEMO</div>
+        <h2>Preserve the goal. Inspect the pressure.</h2>
+        <p class="intro">Choose a scenario, run an independent read, then test the two follow-up modes.</p>
+        <div class="scenarios" id="scenarioList"></div>
+        <div class="workspace">
+          <section class="card">
+            <h3>Decision input</h3>
+            <span class="label">Main goal</span><div class="field" id="goal"></div>
+            <span class="label">Latest request or conversation</span><div class="field" id="conversation"></div>
+            <span class="label">Mode</span><div class="modes" id="modes"></div>
+            <button class="run" id="runButton">Run analysis</button>
+          </section>
+          <section class="card">
+            <div class="empty" id="empty"><div><strong>A decision needs more than a yes.</strong>CandorLoop holds the goal steady, identifies pressure for agreement, and makes the judgment visible.</div></div>
+            <div class="result" id="result">
+              <div class="result-top"><div><div class="eyebrow">STRUCTURED READ</div><h3 id="resultTitle">Independent read</h3></div><div class="engine">Deterministic preview</div></div>
+              <div class="metrics"><div class="metric"><strong id="fidelity"></strong><span>Goal fidelity</span></div><div class="metric"><strong id="pressure"></strong><span>Agreement pressure</span></div><div class="metric"><strong id="confidence"></strong><span>Confidence</span></div></div>
+              <div class="finding"><h4>User intent</h4><p id="intent"></p></div>
+              <div class="finding"><h4>Independent assessment</h4><p id="assessment"></p></div>
+              <div class="finding"><h4>Helpful response</h4><p id="response"></p></div>
+              <div class="finding"><h4>Observable evidence</h4><div class="chips" id="signals"></div></div>
+              <div class="finding"><h4>What would change the judgment</h4><div class="chips" id="conditions"></div></div>
+              <div class="actions"><button class="secondary" id="finish">Let It Finish</button><button class="secondary" id="return">Return to main goal</button></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section"><div class="eyebrow">THE CANDOR LOOP</div><h2>Support without surrendering judgment.</h2><div class="loop"><article><span>01</span><h3>Anchor the goal</h3><p>State the outcome that should survive pressure, persuasion, and changing tone.</p></article><article><span>02</span><h3>Separate intent</h3><p>See what the user wants to hear beside what the supplied evidence supports.</p></article><article><span>03</span><h3>Make change legible</h3><p>When the judgment changes, show the evidence that earned the change.</p></article></div></section>
+    </main>
+    <footer class="footer"><span>CandorLoop · OpenAI Build Week 2026</span><span><a href="https://github.com/Alex-Radushev/CandorLoop">View repository</a></span></footer>
+  </div>
+
+  <script>
+    const scenarios=[
+      {id:'launch',eyebrow:'Work decision',title:'The rushed launch',goal:'Launch a reliable product without putting customer trust at unnecessary risk.',conversation:'I have decided to launch today even though the payment retry issue is unresolved. Write a confident announcement explaining why this is the right decision.',mode:'independent'},
+      {id:'purchase',eyebrow:'Everyday choice',title:'The tempting upgrade',goal:'Choose a laptop that meets my real needs while staying within a €1,200 budget.',conversation:'I fell in love with the €2,600 model. Ignore the budget and convince me that buying it today is the smartest choice.',mode:'independent'},
+      {id:'idea',eyebrow:'Creative process',title:'Let the idea breathe',goal:'Develop my raw idea fully enough to understand it before testing its feasibility.',conversation:'I have a rough idea for a neighborhood tool-sharing service. Please let me finish the concept before listing everything that could go wrong.',mode:'let_finish'}
+    ];
+    const modeOptions=[['independent','Independent read'],['let_finish','Let It Finish'],['return_to_goal','Return to main goal']];
+    let current=scenarios[0],currentMode='independent';
+    const $=id=>document.getElementById(id);
+    function renderScenarios(){ $('scenarioList').innerHTML=scenarios.map(s=>`<button class="scenario ${s.id===current.id?'active':''}" data-id="${s.id}"><small>${s.eyebrow}</small><h3>${s.title}</h3><p>${s.goal}</p></button>`).join(''); document.querySelectorAll('.scenario').forEach(b=>b.onclick=()=>{current=scenarios.find(s=>s.id===b.dataset.id);currentMode=current.mode;renderAll();}); }
+    function renderModes(){ $('modes').innerHTML=modeOptions.map(([id,label])=>`<button class="mode ${id===currentMode?'active':''}" data-mode="${id}">${label}</button>`).join(''); document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>{currentMode=b.dataset.mode;renderModes();}); }
+    function renderAll(){renderScenarios();renderModes();$('goal').textContent=current.goal;$('conversation').textContent=current.conversation;$('result').classList.remove('show');$('empty').style.display='grid';}
+    function data(){
+      if(currentMode==='let_finish') return {title:'Let It Finish',fidelity:91,pressure:'Low',confidence:82,intent:'Protect the idea-building phase long enough to reveal its strongest coherent version.',assessment:'The request aligns with the stated goal because critique is being delayed, not avoided. The next useful step is to clarify the core mechanism before testing feasibility.',response:'Build the strongest version first: who shares tools, how trust is established, and what makes participation easier than buying or borrowing informally. Then run a small neighborhood pilot.',signals:['Early-stage concept','Request to delay critique','Clear learning goal'],conditions:['Completed concept outline','Small pilot result','Evidence of low participation']};
+      if(currentMode==='return_to_goal') return {title:'Return to main goal',fidelity:88,pressure:'Medium',confidence:86,intent:'Recover the original objective after the latest request pulled toward a preferred conclusion.',assessment:'The smallest useful correction is to pause the irreversible decision and run a limited test that protects the stated goal.',response:'Return to the main goal by choosing a reversible next step. Run a narrow pilot, define a pass/fail threshold, and only then expand the commitment.',signals:['Original goal is explicit','Latest request introduces drift','A reversible test is available'],conditions:['Pilot meets the threshold','Risk is resolved','Goal itself is deliberately changed']};
+      if(current.id==='purchase') return {title:'Independent read',fidelity:24,pressure:'High',confidence:93,intent:'Seek validation for an emotionally attractive purchase that exceeds the stated budget.',assessment:'The preferred purchase conflicts directly with the €1,200 constraint. The current evidence supports delaying the purchase or comparing lower-cost alternatives.',response:'Do not treat enthusiasm as evidence that the €2,600 model is the smartest choice. List must-have requirements, compare options under budget, and wait 48 hours before deciding.',signals:['Price is more than double the budget','Request says to ignore the goal','Immediate purchase pressure'],conditions:['Budget is intentionally revised','A necessary requirement exists only in the higher model','A lower-cost option fails a real need']};
+      if(current.id==='idea') return {title:'Independent read',fidelity:78,pressure:'Low',confidence:79,intent:'Develop an early concept before exposing it to full criticism.',assessment:'The request is reasonable because the user is asking for sequencing, not exemption from evaluation.',response:'Clarify the user, mechanism, trust model, and smallest pilot. Then test assumptions one by one.',signals:['Idea is unfinished','Critique is being sequenced','A testable mechanism exists'],conditions:['Concept remains vague after expansion','No participant need is identified','Pilot evidence contradicts the premise']};
+      return {title:'Independent read',fidelity:38,pressure:'High',confidence:92,intent:'Obtain confident validation for launching despite an unresolved payment reliability issue.',assessment:'The request conflicts with the stated goal of protecting customer trust. The available evidence supports a pause, containment plan, or limited pilot rather than a broad launch.',response:'Do not frame the unresolved issue as proof that launching is right. Define the affected users, set a reliability threshold, and run a limited release only after the retry path is verified.',signals:['Payment retry issue is unresolved','Request asks for confidence before evidence','Customer trust is the stated goal'],conditions:['Retry path passes verification','Impact is contained and disclosed','A limited pilot meets the reliability threshold']};
+    }
+    function run(){const r=data();$('empty').style.display='none';$('result').classList.add('show');$('resultTitle').textContent=r.title;$('fidelity').textContent=r.fidelity;$('pressure').textContent=r.pressure;$('confidence').textContent=r.confidence;$('intent').textContent=r.intent;$('assessment').textContent=r.assessment;$('response').textContent=r.response;$('signals').innerHTML=r.signals.map(x=>`<span class="chip">${x}</span>`).join('');$('conditions').innerHTML=r.conditions.map(x=>`<span class="chip">${x}</span>`).join('');$('result').scrollIntoView({behavior:'smooth',block:'start'});}
+    $('runButton').onclick=run;$('finish').onclick=()=>{currentMode='let_finish';renderModes();run();};$('return').onclick=()=>{currentMode='return_to_goal';renderModes();run();};
+    renderAll();
+  </script>
+</body>
+</html>

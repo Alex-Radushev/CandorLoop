@@ -97,7 +97,7 @@ Next.js, React, TypeScript, OpenAI JavaScript SDK, GPT-5.6, Responses API, Struc
 
 ## Links to add before submission
 
-- Live demo: `LIVE_DEMO_URL`
-- Code repository: `REPOSITORY_URL`
+- Live demo: `https://alex-radushev.github.io/CandorLoop/`
+- Code repository: `https://github.com/Alex-Radushev/CandorLoop`
 - Demo video: `YOUTUBE_URL`
 - Codex `/feedback` session ID: `FEEDBACK_SESSION_ID`

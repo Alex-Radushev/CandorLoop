@@ -5,6 +5,8 @@
 
 **Public demo:** https://alex-radushev.github.io/CandorLoop/
 
+**Video demo:** https://youtube.com/shorts/l4fLkAA5Pk4?feature=share
+
 CandorLoop is a focused decision companion built for **OpenAI Build Week 2026**. It helps a person see the difference between what they want an AI to confirm and what the supplied evidence actually supports—without becoming cold, obstructive, or controlling.
 
 The user states the outcome that must remain true, adds the latest conversation or request, and receives a compact, structured read:
